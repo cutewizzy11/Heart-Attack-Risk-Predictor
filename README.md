@@ -2,6 +2,10 @@
 
 Streamlit web app that predicts the probability of heart disease using a model trained on `heart_processed.csv`.
 
+## Live demo
+
+https://harpredictor.streamlit.app/
+
 ## Local run
 
 From the `b2b/` folder:
