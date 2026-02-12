@@ -1,0 +1,22 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+.env
+.streamlit/secrets.toml
+*.log
+
+# Model artifact (optional; can be regenerated on deploy)
+model.joblib
+
+# Keep repo small for GitHub/Streamlit Cloud
+Datasets/ECG Timeseries/
+Datasets/Cadiac Failure/
+doc/
+*.docx
+
+# OS
+.DS_Store
+Thumbs.db
