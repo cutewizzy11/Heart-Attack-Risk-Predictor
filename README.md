@@ -1,33 +1,25 @@
-# Heart Attack Risk Predictor
+# Heart Attack Risk Prediction - Coder Interactive Interface
 
-Streamlit web app that predicts the probability of heart disease using a model trained on `heart_processed.csv`.
-
-## Live demo
+Terraform template using Coder's `coder_parameter` to build an interactive workspace creation form for heart attack risk prediction, sharing results visually in provisioned cloud environments.
 
 ## Coder Workspace Template
 
-This repo includes a Terraform template (`main.tf`) that uses Coder's `coder_parameter` to build an interactive UI for heart attack risk prediction. The template provisions a workspace that runs the prediction and displays the result, fulfilling the hackathon requirement for incorporating Coder's product suite as a visual way to share research results.
+This repo provides a Terraform template (`main.tf`) that uses Coder's `coder_parameter` to create an interactive UI for heart attack risk prediction. The template provisions a workspace that runs the prediction based on user inputs and displays the result, fulfilling the hackathon requirement for incorporating Coder's product suite as a visual way to share research results.
 
-## Local run
+## Usage
 
-From the `b2b/` folder:
+1. Deploy `main.tf` in your Coder instance.
+2. Users create workspaces by filling the interactive form with patient data (age, blood pressure, etc.).
+3. The workspace provisions and runs the prediction, outputting the risk probability and classification.
 
-```bash
-python -m pip install -r requirements.txt
-python train_model.py  # optional (app can auto-train if model.joblib is missing)
-streamlit run app.py
-```
+## Setup Requirements
 
-## Batch scoring
+- Coder instance with Terraform provider support.
+- The template clones this repo and installs dependencies to train the model and run predictions.
 
-The app supports uploading:
+## Notes
 
-- **Encoded CSV**: same columns as `Datasets/Heart Attack/heart_processed.csv` (excluding `HeartDisease`)
-- **Raw CSV**: columns
-  `Age, RestingBP, Cholesterol, FastingBS, MaxHR, Oldpeak, Sex, ChestPainType, RestingECG, ExerciseAngina, ST_Slope`
-
-
-### Notes
-
-- `model.joblib` is intentionally gitignored. On Streamlit Cloud the app will auto-train on first run (cached).
-- If you prefer deterministic deploys, commit `model.joblib` and remove it from `.gitignore`.
+- `model.joblib` is intentionally gitignored. The workspace auto-trains the model on provision.
+- Data: `Datasets/Heart Attack/heart_processed.csv`
+- Training script: `train_model.py`
+- Prediction script: `predict_from_env.py`
