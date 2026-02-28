@@ -4,7 +4,9 @@ Streamlit web app that predicts the probability of heart disease using a model t
 
 ## Live demo
 
-https://harpredictor.streamlit.app/
+## Coder Workspace Template
+
+This repo includes a Terraform template (`main.tf`) that uses Coder's `coder_parameter` to build an interactive UI for heart attack risk prediction. The template provisions a workspace that runs the prediction and displays the result, fulfilling the hackathon requirement for incorporating Coder's product suite as a visual way to share research results.
 
 ## Local run
 
